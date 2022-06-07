@@ -1,0 +1,44 @@
+main {
+  .main-container {
+    display: grid;
+    grid-template-columns: 100vw;
+    .img-desc {
+      width: 100vw;
+    }
+    .c-desc {
+      @include flex(column, center, center);
+      text-align: center;
+      padding: 2.2rem;
+      h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 900;
+        color: $VeryDarkDesaturatedBlue;
+        font-size: 2.2rem;
+      }
+      p {
+        color: $VeryDarkGrayishBlue;
+        font-family: "Barlow", sans-serif;
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin: 1.9rem 0;
+      }
+      a {
+        text-decoration: none;
+        font-family: "Fraunces", serif;
+        color: $VeryDarkDesaturatedBlue;
+        font-weight: bold;
+        font-size: 1.2rem;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 8px;
+          bottom: 0px;
+          z-index: -1;
+          background-color: $Yellow;
+        }
+      }
+    }
+  }
+}

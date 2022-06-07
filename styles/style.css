@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes animArrow {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+  }
+}
+
+@keyframes animArrow {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(2rem);
+            transform: translateY(2rem);
+  }
+}
+
+header {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../assets/mobile/image-header.jpg");
+  background-size: cover;
+  background-position: top;
+  padding: 0rem 1.5rem;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 12%;
+}
+
+header div {
+  width: 100%;
+  height: 88%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.4rem;
+}
+
+header div img {
+  -webkit-animation: animArrow 2s infinite;
+          animation: animArrow 2s infinite;
+}
+
+main .main-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100vw;
+      grid-template-columns: 100vw;
+}
+
+main .main-container .img-desc {
+  width: 100vw;
+}
+
+main .main-container .c-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 2.2rem;
+}
+
+main .main-container .c-desc h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 900;
+  color: #23303e;
+  font-size: 2.2rem;
+}
+
+main .main-container .c-desc p {
+  color: #5a636c;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1.9rem 0;
+}
+
+main .main-container .c-desc a {
+  text-decoration: none;
+  font-family: "Fraunces", serif;
+  color: #23303e;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+main .main-container .c-desc a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  bottom: 0px;
+  z-index: -1;
+  background-color: #fad400;
+}
+/*# sourceMappingURL=style.css.map */
