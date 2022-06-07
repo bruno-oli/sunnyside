@@ -1,125 +1,144 @@
-main {
-  .main-container {
-    display: grid;
-    grid-template-columns: 100vw;
-    .img-desc {
-      width: 100vw;
-    }
-    .c-desc {
-      @include flex(column, center, center);
-      text-align: center;
-      padding: 2.2rem;
-      h1 {
-        font-family: "Fraunces", serif;
-        font-weight: bold;
-        color: $VeryDarkDesaturatedBlue;
-        font-size: 2.2rem;
+body {
+  overflow-x: hidden;
+  main {
+    .main-container {
+      display: grid;
+      grid-template-columns: 100vw;
+      & .stand .c-desc a::before {
+        background-color: $SoftRed;
       }
-      p {
-        color: $VeryDarkGrayishBlue;
-        font-family: "Barlow", sans-serif;
-        font-size: 1.2rem;
-        margin: 1.9rem 0;
+      .img-desc {
+        width: 100vw;
       }
-      a {
-        text-decoration: none;
-        font-family: "Fraunces", serif;
-        color: $VeryDarkDesaturatedBlue;
-        font-weight: bold;
-        font-size: 1.2rem;
-        position: relative;
-        &::before {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 8px;
-          bottom: 0px;
-          z-index: -1;
-          background-color: $Yellow;
-        }
-      }
-    }
-    .graphic {
-      background-image: url(../assets/mobile/image-graphic-design.jpg);
-      background-size: cover;
-      background-position: top;
-      height: 40rem;
-      display: flex;
-      @include flex(column, flex-end, center);
-      padding: 2.2rem;
-      text-align: center;
-      h1 {
-        font-size: 2rem;
-        font-family: "Fraunces", serif;
-        color: $DarkDesaturatedCyan;
-        font-weight: bold;
-        margin-bottom: 2rem;
-      }
-      p {
-        font-size: 1.2rem;
-        font-family: "Barlow", sans-serif;
-        color: $DarkDesaturatedCyan;
-        line-height: 1.6rem;
-      }
-    }
-    .photographic {
-      background-image: url(../assets/mobile/image-photography.jpg);
-      background-size: cover;
-      background-position: top;
-      height: 40rem;
-      @include flex(column, flex-end, center);
-      padding: 2.2rem;
-      text-align: center;
-      h1 {
-        font-size: 2rem;
-        font-family: "Fraunces", serif;
-        color: $DarkBlue;
-        font-weight: bold;
-        margin-bottom: 2rem;
-      }
-      p {
-        font-size: 1.2rem;
-        font-family: "Barlow", sans-serif;
-        color: $DarkBlue;
-        line-height: 1.6rem;
-      }
-    }
-    .testimonial {
-      text-align: center;
-      padding: 3rem 1.5rem;
-      h1 {
-        font-family: Fraunces, serif;
-        font-size: 1.1rem;
-        color: $GrayishBlue;
-        letter-spacing: 0.2rem;
-      }
-      div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        img {
-          width: 20%;
-          border-radius: 50%;
-          margin: 3rem 0 2rem 0;
+      .c-desc {
+        @include flex(column, center, center);
+        text-align: center;
+        padding: 2.2rem;
+        h1 {
+          font-family: "Fraunces", serif;
+          font-weight: bold;
+          color: $VeryDarkDesaturatedBlue;
+          font-size: 2.2rem;
         }
         p {
-          font-family: "Barlow", sans-serif;
           color: $VeryDarkGrayishBlue;
+          font-family: "Barlow", sans-serif;
+          font-size: 1.2rem;
+          margin: 1.9rem 0;
+        }
+        a {
+          text-decoration: none;
+          font-family: "Fraunces", serif;
+          color: $VeryDarkDesaturatedBlue;
           font-weight: bold;
           font-size: 1.2rem;
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            bottom: 0px;
+            z-index: -1;
+            background-color: $Yellow;
+            filter: opacity(35%);
+          }
+        }
+      }
+      .graphic {
+        background-image: url(../assets/mobile/image-graphic-design.jpg);
+        background-size: cover;
+        background-position: top;
+        height: 40rem;
+        display: flex;
+        @include flex(column, flex-end, center);
+        padding: 2.2rem;
+        text-align: center;
+        h1 {
+          font-size: 2rem;
+          font-family: "Fraunces", serif;
+          color: $DarkDesaturatedCyan;
+          font-weight: bold;
+          margin-bottom: 2rem;
+        }
+        p {
+          font-size: 1.2rem;
+          font-family: "Barlow", sans-serif;
+          color: $DarkDesaturatedCyan;
           line-height: 1.6rem;
         }
-        .t-name {
-          margin: 1.9rem 0 0.8rem 0;
-          font-family: Fraunces, serif;
-          font-size: 1.4rem;
-          font-weight: 900;
-          color: $VeryDarkDesaturatedBlue;
+      }
+      .photographic {
+        background-image: url(../assets/mobile/image-photography.jpg);
+        background-size: cover;
+        background-position: top;
+        height: 40rem;
+        @include flex(column, flex-end, center);
+        padding: 2.2rem;
+        text-align: center;
+        h1 {
+          font-size: 2rem;
+          font-family: "Fraunces", serif;
+          color: $DarkBlue;
+          font-weight: bold;
+          margin-bottom: 2rem;
         }
-        .t-cargo {
-          color: $DarkGrayishBlue;
+        p {
+          font-size: 1.2rem;
           font-family: "Barlow", sans-serif;
-          margin-bottom: 1.8rem;
+          color: $DarkBlue;
+          line-height: 1.6rem;
+        }
+      }
+      .testimonial {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        h1 {
+          font-family: Fraunces, serif;
+          font-size: 1.1rem;
+          color: $GrayishBlue;
+          letter-spacing: 0.2rem;
+          margin-bottom: 0.6rem;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &:last-child .t-cargo {
+            margin-bottom: 0;
+          }
+          img {
+            width: 20%;
+            border-radius: 50%;
+            margin: 3rem 0 2rem 0;
+          }
+          p {
+            font-family: "Barlow", sans-serif;
+            color: $VeryDarkGrayishBlue;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.6rem;
+          }
+          .t-name {
+            margin: 1.9rem 0 0.8rem 0;
+            font-family: Fraunces, serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: $VeryDarkDesaturatedBlue;
+          }
+          .t-cargo {
+            color: $DarkGrayishBlue;
+            font-family: "Barlow", sans-serif;
+            margin-bottom: 1.8rem;
+          }
+        }
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 4rem;
+        img {
+          width: 50vw;
         }
       }
     }

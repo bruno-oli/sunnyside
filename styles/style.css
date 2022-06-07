@@ -137,18 +137,26 @@ header div img {
           animation: animArrow 2s infinite;
 }
 
-main .main-container {
+body {
+  overflow-x: hidden;
+}
+
+body main .main-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 100vw;
       grid-template-columns: 100vw;
 }
 
-main .main-container .img-desc {
+body main .main-container .stand .c-desc a::before {
+  background-color: #fe7867;
+}
+
+body main .main-container .img-desc {
   width: 100vw;
 }
 
-main .main-container .c-desc {
+body main .main-container .c-desc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,21 +174,21 @@ main .main-container .c-desc {
   padding: 2.2rem;
 }
 
-main .main-container .c-desc h1 {
+body main .main-container .c-desc h1 {
   font-family: "Fraunces", serif;
   font-weight: bold;
   color: #23303e;
   font-size: 2.2rem;
 }
 
-main .main-container .c-desc p {
+body main .main-container .c-desc p {
   color: #5a636c;
   font-family: "Barlow", sans-serif;
   font-size: 1.2rem;
   margin: 1.9rem 0;
 }
 
-main .main-container .c-desc a {
+body main .main-container .c-desc a {
   text-decoration: none;
   font-family: "Fraunces", serif;
   color: #23303e;
@@ -189,17 +197,19 @@ main .main-container .c-desc a {
   position: relative;
 }
 
-main .main-container .c-desc a::before {
-  content: '';
+body main .main-container .c-desc a::before {
+  content: "";
   position: absolute;
   width: 100%;
   height: 8px;
   bottom: 0px;
   z-index: -1;
   background-color: #fad400;
+  -webkit-filter: opacity(35%);
+          filter: opacity(35%);
 }
 
-main .main-container .graphic {
+body main .main-container .graphic {
   background-image: url(../assets/mobile/image-graphic-design.jpg);
   background-size: cover;
   background-position: top;
@@ -222,7 +232,7 @@ main .main-container .graphic {
   text-align: center;
 }
 
-main .main-container .graphic h1 {
+body main .main-container .graphic h1 {
   font-size: 2rem;
   font-family: "Fraunces", serif;
   color: #25564b;
@@ -230,14 +240,14 @@ main .main-container .graphic h1 {
   margin-bottom: 2rem;
 }
 
-main .main-container .graphic p {
+body main .main-container .graphic p {
   font-size: 1.2rem;
   font-family: "Barlow", sans-serif;
   color: #25564b;
   line-height: 1.6rem;
 }
 
-main .main-container .photographic {
+body main .main-container .photographic {
   background-image: url(../assets/mobile/image-photography.jpg);
   background-size: cover;
   background-position: top;
@@ -259,7 +269,7 @@ main .main-container .photographic {
   text-align: center;
 }
 
-main .main-container .photographic h1 {
+body main .main-container .photographic h1 {
   font-size: 2rem;
   font-family: "Fraunces", serif;
   color: #19536b;
@@ -267,26 +277,27 @@ main .main-container .photographic h1 {
   margin-bottom: 2rem;
 }
 
-main .main-container .photographic p {
+body main .main-container .photographic p {
   font-size: 1.2rem;
   font-family: "Barlow", sans-serif;
   color: #19536b;
   line-height: 1.6rem;
 }
 
-main .main-container .testimonial {
+body main .main-container .testimonial {
   text-align: center;
   padding: 3rem 1.5rem;
 }
 
-main .main-container .testimonial h1 {
+body main .main-container .testimonial h1 {
   font-family: Fraunces, serif;
   font-size: 1.1rem;
   color: #a7abae;
   letter-spacing: 0.2rem;
+  margin-bottom: 0.6rem;
 }
 
-main .main-container .testimonial div {
+body main .main-container .testimonial div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,13 +310,17 @@ main .main-container .testimonial div {
           align-items: center;
 }
 
-main .main-container .testimonial div img {
+body main .main-container .testimonial div:last-child .t-cargo {
+  margin-bottom: 0;
+}
+
+body main .main-container .testimonial div img {
   width: 20%;
   border-radius: 50%;
   margin: 3rem 0 2rem 0;
 }
 
-main .main-container .testimonial div p {
+body main .main-container .testimonial div p {
   font-family: "Barlow", sans-serif;
   color: #5a636c;
   font-weight: bold;
@@ -313,7 +328,7 @@ main .main-container .testimonial div p {
   line-height: 1.6rem;
 }
 
-main .main-container .testimonial div .t-name {
+body main .main-container .testimonial div .t-name {
   margin: 1.9rem 0 0.8rem 0;
   font-family: Fraunces, serif;
   font-size: 1.4rem;
@@ -321,9 +336,55 @@ main .main-container .testimonial div .t-name {
   color: #23303e;
 }
 
-main .main-container .testimonial div .t-cargo {
+body main .main-container .testimonial div .t-cargo {
   color: #818498;
   font-family: "Barlow", sans-serif;
   margin-bottom: 1.8rem;
+}
+
+body main .main-container .gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+}
+
+body main .main-container .gallery img {
+  width: 50vw;
+}
+
+body footer {
+  height: 18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #51d6bc;
+  padding: 4rem 0rem;
+}
+
+body footer .footer-links a {
+  font-size: 1.2rem;
+  font-family: "Barlow", sans-serif;
+  color: #25564b;
+  text-decoration: none;
+}
+
+body footer .footer-links a:not(:last-child) {
+  margin-right: 2.2rem;
+}
+
+body footer .social-media a:not(:last-child) {
+  margin-right: 1.5rem;
 }
 /*# sourceMappingURL=style.css.map */

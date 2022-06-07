@@ -1,0 +1,26 @@
+body {
+  footer {
+    height: 18rem;
+    @include flex(column, space-between, center);
+    background-color: $DarkModerateCyan;
+    padding: 4rem 0rem;
+    .footer-links {
+      a {
+        font-size: 1.2rem;
+        font-family: "Barlow", sans-serif;  
+        color: $DarkDesaturatedCyan;
+        text-decoration: none;
+        &:not(:last-child) {
+          margin-right: 2.2rem;
+        }
+      }
+    }
+    .social-media {
+      a {
+        &:not(:last-child) {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+}
