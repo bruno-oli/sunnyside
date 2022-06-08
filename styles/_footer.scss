@@ -10,12 +10,22 @@ body {
         font-family: "Barlow", sans-serif;  
         color: $DarkDesaturatedCyan;
         text-decoration: none;
+        transition: .3s;
         &:not(:last-child) {
           margin-right: 2.2rem;
+        }
+        &:hover {
+          color: white;
         }
       }
     }
     .social-media {
+      .svg-hover {
+        transition: .2s;
+        &:hover {
+          fill: white
+        }
+      }
       a {
         &:not(:last-child) {
           margin-right: 1.5rem;

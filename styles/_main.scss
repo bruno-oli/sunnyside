@@ -1,12 +1,25 @@
 body {
   overflow-x: hidden;
   main {
+    @media (max-width: 600px) {
+      .qualities-desktop {
+        display: none;
+      }
+      .gallery-desktop {
+        display: none;
+      }
+    } 
+    .gallery-mobile {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 4rem;
+      img {
+        width: 50vw;
+      }
+    }
     .main-container {
       display: grid;
       grid-template-columns: 100vw;
-      & .stand .c-desc a::before {
-        background-color: $SoftRed;
-      }
       .img-desc {
         width: 100vw;
       }
@@ -100,7 +113,7 @@ body {
           letter-spacing: 0.2rem;
           margin-bottom: 0.6rem;
         }
-        div {
+        .perfis div {
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -133,14 +146,112 @@ body {
           }
         }
       }
-      .gallery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        margin-top: 4rem;
-        img {
-          width: 50vw;
-        }
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .qualities-mobile {
+    display: none;
+  }
+  .gallery-mobile {
+    display: none;
+    img {
+      display: none;
+    }
+  }
+  .qualities-desktop {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr 1fr 1fr;
+    div {
+      text-align: left;
+      justify-self: flex-start;
+      align-self: center;
+      padding-left: 25%;
+    }
+    .graphic-desktop, .photography-desktop {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-left: 0%;
+      p {
+        margin-bottom: 3.5rem;
+        text-align: center;
       }
+    }
+    .graphic-desktop {
+      background-image: url("../assets/desktop/image-graphic-design.jpg");
+      background-size: cover;
+      background-position: top;
+    }
+    .photography-desktop {
+      background-image: url("../assets/desktop/image-photography.jpg");
+      background-size: cover;
+      background-position: top;
+    }
+    img {
+      width: 50vw;
+    }
+    h1 {
+      font-family: "Fraunces", serif;
+      font-weight: bold;
+      color: $VeryDarkDesaturatedBlue;
+      font-size: 2.2rem;
+    }
+    p {
+      color: $VeryDarkGrayishBlue;
+      font-family: "Barlow", sans-serif;
+      font-size: 1.2rem;
+      margin: 1.9rem 0;
+      width: 75%;
+    }
+    a {
+      text-decoration: none;
+      font-family: "Fraunces", serif;
+      color: $VeryDarkDesaturatedBlue;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative;
+      &:hover::before {
+        border-radius: 8px;
+        filter: opacity(100%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 11px;
+        bottom: 0px;
+        z-index: -1;
+        background-color: $Yellow;
+        filter: opacity(35%);
+        transition: .3s;
+      }
+    }
+  }
+  .testimonial {
+    h1 {
+      margin-top: 6vh;
+    }
+    .perfis {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8vw;
+      margin: 0;
+      div {
+        width: 20rem;
+      }
+    }
+  }
+  .gallery-desktop {
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
+    img {
+      width: 25vw;
     }
   }
 }

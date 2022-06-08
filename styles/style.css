@@ -28,12 +28,12 @@
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: url("../assets/mobile/image-header.jpg");
   background-size: cover;
   background-position: top;
-  padding: 0rem 1.5rem;
+  padding: 0rem 2rem;
 }
 
 header nav {
@@ -54,6 +54,10 @@ header nav {
   position: relative;
 }
 
+header nav .desktop-menu {
+  display: none;
+}
+
 header nav .mobile-menu {
   -webkit-transition: .3s;
   transition: .3s;
@@ -61,6 +65,7 @@ header nav .mobile-menu {
   display: none;
   opacity: 0;
   height: 40vh;
+  width: 100%;
   top: 5rem;
   background-color: white;
 }
@@ -102,9 +107,12 @@ header nav .mobile-menu #contact {
   height: 4rem;
   font-size: 1.1rem;
   border-radius: 30px;
+  font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
-header div {
+header .h-content {
   width: 100%;
   height: 88%;
   display: -webkit-box;
@@ -122,7 +130,7 @@ header div {
           align-items: center;
 }
 
-header div h1 {
+header .h-content h1 {
   font-family: 'Fraunces', serif;
   font-weight: 900;
   font-size: 2.5rem;
@@ -132,13 +140,87 @@ header div h1 {
   letter-spacing: 0.4rem;
 }
 
-header div img {
+header .h-content img {
   -webkit-animation: animArrow 2s infinite;
           animation: animArrow 2s infinite;
 }
 
+@media (min-width: 600px) {
+  header {
+    background-image: url("../assets/desktop/image-header.jpg");
+    padding: 4vh 6vw;
+  }
+  header nav img {
+    width: 12rem;
+  }
+  header nav .btn-hamburguer {
+    display: none;
+  }
+  header nav .mobile-menu {
+    display: none;
+  }
+  header nav .desktop-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header nav .desktop-menu a {
+    color: white;
+    font-family: "Barlow", sans-serif;
+    text-decoration: none;
+    margin-right: 2rem;
+  }
+  header nav .desktop-menu button {
+    font-family: "Fraunces", serif;
+    background-color: white;
+    border: none;
+    color: #19536b;
+    font-weight: bold;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  header nav .desktop-menu button:hover {
+    background-color: rgba(255, 255, 255, 0.308);
+    color: white;
+  }
+  header .h-content h1 {
+    font-size: 4rem;
+  }
+  header .h-content img {
+    cursor: pointer;
+  }
+}
+
 body {
   overflow-x: hidden;
+}
+
+@media (max-width: 600px) {
+  body main .qualities-desktop {
+    display: none;
+  }
+  body main .gallery-desktop {
+    display: none;
+  }
+}
+
+body main .gallery-mobile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+}
+
+body main .gallery-mobile img {
+  width: 50vw;
 }
 
 body main .main-container {
@@ -146,10 +228,6 @@ body main .main-container {
   display: grid;
   -ms-grid-columns: 100vw;
       grid-template-columns: 100vw;
-}
-
-body main .main-container .stand .c-desc a::before {
-  background-color: #fe7867;
 }
 
 body main .main-container .img-desc {
@@ -297,7 +375,7 @@ body main .main-container .testimonial h1 {
   margin-bottom: 0.6rem;
 }
 
-body main .main-container .testimonial div {
+body main .main-container .testimonial .perfis div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,17 +388,17 @@ body main .main-container .testimonial div {
           align-items: center;
 }
 
-body main .main-container .testimonial div:last-child .t-cargo {
+body main .main-container .testimonial .perfis div:last-child .t-cargo {
   margin-bottom: 0;
 }
 
-body main .main-container .testimonial div img {
+body main .main-container .testimonial .perfis div img {
   width: 20%;
   border-radius: 50%;
   margin: 3rem 0 2rem 0;
 }
 
-body main .main-container .testimonial div p {
+body main .main-container .testimonial .perfis div p {
   font-family: "Barlow", sans-serif;
   color: #5a636c;
   font-weight: bold;
@@ -328,7 +406,7 @@ body main .main-container .testimonial div p {
   line-height: 1.6rem;
 }
 
-body main .main-container .testimonial div .t-name {
+body main .main-container .testimonial .perfis div .t-name {
   margin: 1.9rem 0 0.8rem 0;
   font-family: Fraunces, serif;
   font-size: 1.4rem;
@@ -336,22 +414,137 @@ body main .main-container .testimonial div .t-name {
   color: #23303e;
 }
 
-body main .main-container .testimonial div .t-cargo {
+body main .main-container .testimonial .perfis div .t-cargo {
   color: #818498;
   font-family: "Barlow", sans-serif;
   margin-bottom: 1.8rem;
 }
 
-body main .main-container .gallery {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  margin-top: 4rem;
-}
-
-body main .main-container .gallery img {
-  width: 50vw;
+@media (min-width: 600px) {
+  .qualities-mobile {
+    display: none;
+  }
+  .gallery-mobile {
+    display: none;
+  }
+  .gallery-mobile img {
+    display: none;
+  }
+  .qualities-desktop {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+  .qualities-desktop div {
+    text-align: left;
+    justify-self: flex-start;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding-left: 25%;
+  }
+  .qualities-desktop .graphic-desktop, .qualities-desktop .photography-desktop {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-left: 0%;
+  }
+  .qualities-desktop .graphic-desktop p, .qualities-desktop .photography-desktop p {
+    margin-bottom: 3.5rem;
+    text-align: center;
+  }
+  .qualities-desktop .graphic-desktop {
+    background-image: url("../assets/desktop/image-graphic-design.jpg");
+    background-size: cover;
+    background-position: top;
+  }
+  .qualities-desktop .photography-desktop {
+    background-image: url("../assets/desktop/image-photography.jpg");
+    background-size: cover;
+    background-position: top;
+  }
+  .qualities-desktop img {
+    width: 50vw;
+  }
+  .qualities-desktop h1 {
+    font-family: "Fraunces", serif;
+    font-weight: bold;
+    color: #23303e;
+    font-size: 2.2rem;
+  }
+  .qualities-desktop p {
+    color: #5a636c;
+    font-family: "Barlow", sans-serif;
+    font-size: 1.2rem;
+    margin: 1.9rem 0;
+    width: 75%;
+  }
+  .qualities-desktop a {
+    text-decoration: none;
+    font-family: "Fraunces", serif;
+    color: #23303e;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: relative;
+  }
+  .qualities-desktop a:hover::before {
+    border-radius: 8px;
+    -webkit-filter: opacity(100%);
+            filter: opacity(100%);
+  }
+  .qualities-desktop a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 11px;
+    bottom: 0px;
+    z-index: -1;
+    background-color: #fad400;
+    -webkit-filter: opacity(35%);
+            filter: opacity(35%);
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .testimonial h1 {
+    margin-top: 6vh;
+  }
+  .testimonial .perfis {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0 8vw;
+    margin: 0;
+  }
+  .testimonial .perfis div {
+    width: 20rem;
+  }
+  .gallery-desktop {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 25vw 25vw 25vw 25vw;
+        grid-template-columns: 25vw 25vw 25vw 25vw;
+  }
+  .gallery-desktop img {
+    width: 25vw;
+  }
 }
 
 body footer {
@@ -378,10 +571,25 @@ body footer .footer-links a {
   font-family: "Barlow", sans-serif;
   color: #25564b;
   text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 body footer .footer-links a:not(:last-child) {
   margin-right: 2.2rem;
+}
+
+body footer .footer-links a:hover {
+  color: white;
+}
+
+body footer .social-media .svg-hover {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+body footer .social-media .svg-hover:hover {
+  fill: white;
 }
 
 body footer .social-media a:not(:last-child) {
