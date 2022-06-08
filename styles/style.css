@@ -595,4 +595,22 @@ body footer .social-media .svg-hover:hover {
 body footer .social-media a:not(:last-child) {
   margin-right: 1.5rem;
 }
+
+body .credits {
+  color: #25564b;
+  font-family: "Barlow", sans-serif;
+  font-weight: bold;
+}
+
+body .credits a {
+  color: #25564b;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+body .credits a:hover {
+  text-decoration: underline;
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
